@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+import numpy as np
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+plt.plot(x, y1, label='sin(x)')
+plt.plot(x, y2, label='cos(x)')
+plt.fill_between(x, y1, y2, where=(y1 > y2), color='lightblue', alpha=0.5, label='$sin > cos$')
+plt.fill_between(x, y1, y2, where=(y1 <= y2), color='lightcoral', alpha=0.5, label='$cos >= sin$')
+plt.title('Fill Between Plot Example')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.legend()
+plt.grid()
+plt.show()
